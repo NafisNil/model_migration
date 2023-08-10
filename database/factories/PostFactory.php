@@ -20,7 +20,7 @@ class PostFactory extends Factory
         $slug = Str::slug($title, '-');
         return [
             //
-            'title' => $title,
+            'name' => $title,
             'slug' => $slug,
             'excerpt' => fake()->sentence,
             'content' => fake()->sentence,
