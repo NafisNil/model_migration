@@ -12,11 +12,14 @@ class PostController extends Controller
     public function index()
     {
         //
-       // $posts = DB::table('posts')->select('excerpt as summary', 'content')->get();
-        DB::transaction(function () {
+      $posts = DB::table('posts')->latest('name')->get();
+      //$posts = DB::table('posts')->oldest()->get();
+      //$posts = DB::table('posts')->whereFullText('description', 'qui');
+       dd($posts);
+      /*  DB::transaction(function () {
             DB::table('users')->where('id',1)->decrement('balance', 20);
             DB::table('users')->where('id',2)->increment('balance', 20);
-        });
+        });*/
     }
 
     /**
